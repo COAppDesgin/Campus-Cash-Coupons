@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4D3C939F1F32705D0089ABF2"
+               BuildableName = "Campus Cash Coupons.app"
+               BlueprintName = "Campus Cash Coupons"
+               ReferencedContainer = "container:Campus Cash Coupons.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4D3C93B31F32705D0089ABF2"
+               BuildableName = "Campus Cash CouponsUITests.xctest"
+               BlueprintName = "Campus Cash CouponsUITests"
+               ReferencedContainer = "container:Campus Cash Coupons.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4D3C939F1F32705D0089ABF2"
+            BuildableName = "Campus Cash Coupons.app"
+            BlueprintName = "Campus Cash Coupons"
+            ReferencedContainer = "container:Campus Cash Coupons.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +61,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4D3C939F1F32705D0089ABF2"
+            BuildableName = "Campus Cash Coupons.app"
+            BlueprintName = "Campus Cash Coupons"
+            ReferencedContainer = "container:Campus Cash Coupons.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4D3C939F1F32705D0089ABF2"
+            BuildableName = "Campus Cash Coupons.app"
+            BlueprintName = "Campus Cash Coupons"
+            ReferencedContainer = "container:Campus Cash Coupons.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
