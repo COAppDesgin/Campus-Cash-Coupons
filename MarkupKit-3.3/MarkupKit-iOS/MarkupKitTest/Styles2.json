@@ -1,0 +1,18 @@
+{
+    "firstRow": {
+        "layoutMargins": 6,
+        "layer.borderWidth": 4,
+        "layer.borderColor": "#ffff00"
+    },
+
+    "secondRow": {
+        "layoutMargins": 6,
+        "layer.borderWidth": 4,
+        "layer.borderColor": "#00ffff"
+    },
+
+    "greetingLabel": {
+        "font": "title",
+        "textColor": "#00ffff"
+    }
+}

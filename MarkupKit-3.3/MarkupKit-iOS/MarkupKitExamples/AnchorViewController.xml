@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<?properties {
+    "cell": {
+        "layer.borderColor": "#cccccc"
+    }
+}?>
+
+<?case iOS?>
+<?properties {
+    "cell": {
+        "layer.borderWidth": 0.5
+    }
+}?>
+<?case tvOS?>
+<?properties {
+    "cell": {
+        "layer.borderWidth": 1
+    }
+}?>
+<?end?>
+
+<LMAnchorView layoutMarginsRelativeArrangement="false"
+    topSpacing="16" bottomSpacing="16" leadingSpacing="16" trailingSpacing="16"
+    backgroundColor="white">
+    <UIView class="cell" anchor="all"/>
+
+    <UILabel class="cell" text="Top Leading" anchor="top, leading"/>
+    <UILabel class="cell" text="Top" anchor="top"/>
+    <UILabel class="cell" text="Top Trailing" anchor="top, trailing"/>
+
+    <UILabel class="cell" text="Leading" anchor="leading"/>
+
+    <UILabel class="cell" text="None"/>
+
+    <UILabel class="cell" text="Trailing" anchor="trailing"/>
+
+    <UILabel class="cell" text="Bottom Leading" anchor="bottom, leading"/>
+    <UILabel class="cell" text="Bottom" anchor="bottom"/>
+    <UILabel class="cell" text="Bottom Trailing" anchor="bottom, trailing"/>
+</LMAnchorView>

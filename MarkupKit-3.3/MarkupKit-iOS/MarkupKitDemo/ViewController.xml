@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<LMTableView style="groupedTableView">
+    <!-- Image view -->
+    <sectionHeader title="@imageView"/>
+
+    <LMTableViewCell selectionStyle="none">
+        <UIImageView image="sample.jpg" contentMode="scaleAspectFit" height="210"/>
+    </LMTableViewCell>
+
+    <!-- Button -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@button"/>
+
+    <LMTableViewCell selectionStyle="none">
+        <UIButton style="systemButton" title="@pressMe" onPrimaryActionTriggered="showGreeting"/>
+    </LMTableViewCell>
+
+    <?case iOS?>
+
+    <!-- Switch -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@switch"/>
+
+    <UITableViewCell textLabel.text="@onOff" selectionStyle="none">
+        <UISwitch/>
+    </UITableViewCell>
+
+    <?end?>
+
+    <!-- Text fields -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@textFields"/>
+
+    <LMTableViewCell selectionStyle="none">
+        <UITextField placeholder="@text"/>
+    </LMTableViewCell>
+
+    <LMTableViewCell selectionStyle="none">
+        <UITextField placeholder="@number" keyboardType="numberPad"/>
+    </LMTableViewCell>
+
+    <LMTableViewCell selectionStyle="none">
+        <UITextField placeholder="@emailAddress" keyboardType="emailAddress"/>
+    </LMTableViewCell>
+
+    <LMTableViewCell selectionStyle="none">
+        <UITextField placeholder="@password" secureTextEntry="true"/>
+    </LMTableViewCell>
+
+    <?case iOS?>
+    <LMTableViewCell selectionStyle="none">
+        <UITextField id="dateTextField" placeholder="@date">
+            <?inputView?>
+            <UIDatePicker id="datePicker" datePickerMode="date"/>
+
+            <?inputAccessoryView?>
+            <UIToolbar>
+                <item type="cancel" action="cancelDateEdit"/>
+                <item type="flexibleSpace"/>
+                <item type="done" action="updateDateText"/>
+            </UIToolbar>
+        </UITextField>
+    </LMTableViewCell>
+
+    <LMTableViewCell selectionStyle="none">
+        <UITextField id="sizeTextField" placeholder="@size">
+            <?inputView?>
+            <LMPickerView id="sizePickerView">
+                <row title="@small"/>
+                <row title="@medium"/>
+                <row title="@large"/>
+                <row title="@extraLarge"/>
+            </LMPickerView>
+
+            <?inputAccessoryView?>
+            <UIToolbar>
+                <item type="cancel" action="cancelSizeEdit"/>
+                <item type="flexibleSpace"/>
+                <item type="done" action="updateSizeText"/>
+            </UIToolbar>
+        </UITextField>
+    </LMTableViewCell>
+    <?end?>
+
+    <!-- Radio buttons -->
+    <?sectionBreak?>
+    <?sectionSelectionMode singleCheckmark?>
+
+    <sectionHeader title="@radioButtons"/>
+
+    <UITableViewCell textLabel.text="@small"/>
+    <UITableViewCell textLabel.text="@medium"/>
+    <UITableViewCell textLabel.text="@large" checked="true"/>
+    <UITableViewCell textLabel.text="@extraLarge"/>
+
+    <!-- Checkboxes -->
+    <?sectionBreak?>
+    <?sectionSelectionMode multipleCheckmarks?>
+
+    <sectionHeader title="@checkboxes"/>
+
+    <UITableViewCell textLabel.text="@dog"/>
+    <UITableViewCell textLabel.text="@cat" checked="true"/>
+    <UITableViewCell textLabel.text="@fish"/>
+    <UITableViewCell textLabel.text="@rabbit"/>
+    <UITableViewCell textLabel.text="@turtle" checked="true"/>
+
+    <!-- Segmented control -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@segmentedControl"/>
+
+    <LMTableViewCell selectionStyle="none">
+        <LMRowView>
+            <LMSpacer/>
+                <UISegmentedControl>
+                    <segment title="@small"/>
+                    <segment title="@medium"/>
+                    <segment title="@large"/>
+                    <segment title="@extraLarge"/>
+                </UISegmentedControl>
+            <LMSpacer/>
+        </LMRowView>
+    </LMTableViewCell>
+
+    <?case iOS?>
+
+    <!-- Date picker -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@datePicker"/>
+
+    <LMTableViewCell selectionStyle="none" layoutMarginsRelativeArrangement="false">
+        <UIDatePicker datePickerMode="date"/>
+    </LMTableViewCell>
+
+    <!-- Custom picker -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@customPicker"/>
+
+    <LMTableViewCell selectionStyle="none" layoutMarginsRelativeArrangement="false">
+        <LMPickerView>
+            <?componentName sizes?>
+            <row title="@small"/>
+            <row title="@medium"/>
+            <row title="@large"/>
+            <row title="@extraLarge"/>
+
+            <?componentSeparator?>
+
+            <?componentName colors?>
+            <row title="@red"/>
+            <row title="@yellow"/>
+            <row title="@green"/>
+            <row title="@blue"/>
+            <row title="@purple"/>
+        </LMPickerView>
+    </LMTableViewCell>
+
+    <?end?>
+
+    <!-- Collection view -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@collectionView"/>
+
+    <LMTableViewCell selectionStyle="none">
+        <LMCollectionView style="flowLayoutCollectionView" id="collectionView" height="64"
+            collectionViewLayout.scrollDirection="horizontal"
+            collectionViewLayout.itemWidth="64" collectionViewLayout.itemHeight="64"
+            collectionViewLayout.minimumLineSpacing="4"/>
+    </LMTableViewCell>
+
+    <?case iOS?>
+
+    <!-- Stepper -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@stepper"/>
+
+    <LMTableViewCell selectionStyle="none">
+        <LMRowView>
+            <LMSpacer/>
+            <UIStepper id="stepper" minimumValue="0" maximumValue="1" stepValue="0.1" value="0.5" onValueChanged="stepperValueChanged:"/>
+            <LMSpacer/>
+        </LMRowView>
+    </LMTableViewCell>
+
+    <!-- Slider -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@slider"/>
+
+    <LMTableViewCell selectionStyle="none">
+        <UISlider id="slider" onValueChanged="sliderValueChanged:"/>
+    </LMTableViewCell>
+
+    <!-- Page control -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@pageControl"/>
+
+    <LMTableViewCell selectionStyle="none">
+        <UIPageControl id="pageControl" numberOfPages="11" pageIndicatorTintColor="red" currentPageIndicatorTintColor="green"/>
+    </LMTableViewCell>
+
+    <!-- Progress view -->
+    <?sectionBreak?>
+
+    <sectionHeader title="@progressView"/>
+
+    <LMTableViewCell selectionStyle="none">
+        <UIProgressView id="progressView" style="defaultProgressView"/>
+    </LMTableViewCell>
+
+    <?end?>
+</LMTableView>
