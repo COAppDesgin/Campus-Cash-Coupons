@@ -52,9 +52,9 @@ class ViewController : UIViewController {
         present(navController, animated: true, completion: nil)
     }
     
-    func sendBottomBar() {
+    /*func sendBottomBar() {
         self.present(CategoriesCollectionViewController as UICollectionViewController, animated: true, completion: nil)
-    }
+    }*/
     
 }
 
