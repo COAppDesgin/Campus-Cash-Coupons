@@ -1,5 +1,5 @@
 //
-//  CategoriesTableViewController.swift
+//  SearchTableViewController.swift
 //  Campus Cash Coupons
 //
 //  Created by Tyler Jordan Cagle on 8/3/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoriesTableViewController: UITableViewController {
+class SearchTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

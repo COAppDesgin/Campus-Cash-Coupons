@@ -11,6 +11,9 @@ import PureLayout
 
 class MainView: UIView {
     
+    var mainViewController = ViewController()
+    var bottomBarImage: UIButton!
+    
     private var searchBar: UISearchBar!
     private var searchButton: UIButton!
     private var resultsTable: UITableView!
@@ -36,11 +39,13 @@ class MainView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupViews()
+        setupBottomBar()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        setupBottomBar()
     }
     
     // MARK: - Initialization
@@ -50,6 +55,28 @@ class MainView: UIView {
         setupSearchButton()
         setupResultsTable()
     }
+    
+    func setupBottomBar() {
+        let image = UIImage(named: "bottomBar")
+        bottomBarImage = UIButton(type: .custom)
+        bottomBarImage.setBackgroundImage(image, for: .normal)
+        bottomBarImage.translatesAutoresizingMaskIntoConstraints = false
+        bottomBarImage.isUserInteractionEnabled = true
+        bottomBarImage.addTarget(self, action: #selector(sendBottomBar), for: .touchDragInside)
+        
+//        bottomBarImage.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
+        addSubview(bottomBarImage)
+        
+        bottomBarImage.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        bottomBarImage.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        bottomBarImage.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        bottomBarImage.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
+    func  sendBottomBar() {
+        mainViewController.viewDidAppear(true)
+    }
+
     
     func setupSearchBar() {
         searchBar = UISearchBar.newAutoLayout()
@@ -118,6 +145,7 @@ class MainView: UIView {
     
     func searchClicked(sender: UIButton!) {
         showSearchBar(searchBar: searchBar)
+        bottomBarImage.isHidden = true
     }
     
     // MARK: - Helpers
@@ -166,12 +194,17 @@ class MainView: UIView {
         }
         )
     }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        return touch.view == gestureRecognizer.view
+    }
 }
 
 extension MainView: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         dismissSearchBar(searchBar: searchBar)
+        bottomBarImage.isHidden = false
     }
 }
 

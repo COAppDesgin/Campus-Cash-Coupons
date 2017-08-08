@@ -11,13 +11,12 @@ import PureLayout
 
 class ViewController : UIViewController {
     
-    @IBOutlet weak var bottomBarTab: UIImageView!
     private var mainView: MainView!
     private var didSetupConstraints = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
         mainView = MainView.newAutoLayout()
         view.addSubview(mainView)
         
@@ -48,9 +47,13 @@ class ViewController : UIViewController {
     }
     
     func categoriesIconSlide() {
-        let categoriesController = CategoriesTableViewController()
-        let navController = UINavigationController(rootViewController: categoriesController)
+        let searchController = SearchTableViewController()
+        let navController = UINavigationController(rootViewController: searchController)
         present(navController, animated: true, completion: nil)
+    }
+    
+    func sendBottomBar() {
+        self.present(CategoriesCollectionViewController as UICollectionViewController, animated: true, completion: nil)
     }
     
 }
